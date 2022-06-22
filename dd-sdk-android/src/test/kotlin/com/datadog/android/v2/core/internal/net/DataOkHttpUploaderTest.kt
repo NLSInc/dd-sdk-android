@@ -139,7 +139,7 @@ internal class DataOkHttpUploaderTest {
         }
         fakeDatadogRequest = DatadogRequest(
             id = fakeRequestId,
-            context = fakeRequestContext,
+            description = fakeRequestContext,
             headers = fakeHeaders,
             url = url,
             body = fakeRequestBody.toByteArray(),

@@ -10,7 +10,7 @@ package com.datadog.android.v2.api
  * Request object holding the data to be sent.
  *
  * @property id Unique identifier of the request.
- * @property context Description of the request (ex. "RUM request", "Logs request", etc.).
+ * @property description Description of the request (ex. "RUM request", "Logs request", etc.).
  * @property url URL to call.
  * @property headers Request headers. Note that User Agent header will be ignored.
  * @property body Request payload.
@@ -18,7 +18,7 @@ package com.datadog.android.v2.api
  */
 data class Request(
     val id: String,
-    val context: String,
+    val description: String,
     val url: String,
     val headers: Map<String, String>,
     // won't generate custom equals/hashcode, because ID field is enough to identify the request

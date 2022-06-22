@@ -43,7 +43,7 @@ import com.google.gson.JsonObject
  * Internal implementation of the [SDKCore] interface.
  * @param credentials the Datadog credentials for this instance
  */
-class DatadogCore(
+internal class DatadogCore(
     context: Context,
     internal val credentials: Credentials,
     configuration: Configuration

@@ -47,7 +47,7 @@ internal class DataOkHttpUploader(
         }
 
         uploadStatus.logStatus(
-            request.context,
+            request.description,
             request.body.size,
             devLogger,
             ignoreInfo = false,
@@ -55,7 +55,7 @@ internal class DataOkHttpUploader(
             requestId = request.id
         )
         uploadStatus.logStatus(
-            request.context,
+            request.description,
             request.body.size,
             internalLogger,
             ignoreInfo = true,
