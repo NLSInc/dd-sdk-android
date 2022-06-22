@@ -33,6 +33,7 @@ import com.datadog.android.v2.api.FeatureScope
 import com.datadog.android.v2.api.FeatureStorageConfiguration
 import com.datadog.android.v2.api.FeatureUploadConfiguration
 import com.datadog.android.v2.api.SDKCore
+import com.datadog.android.v2.api.context.DatadogContext
 import com.datadog.android.webview.internal.log.WebViewLogsFeature
 import com.datadog.android.webview.internal.rum.WebViewRumFeature
 import com.datadog.opentracing.DDSpan
@@ -60,6 +61,9 @@ class DatadogCore(
         null
     internal var webViewLogsFeature: SdkFeature<JsonObject, Configuration.Feature.Logs>? = null
     internal var webViewRumFeature: SdkFeature<Any, Configuration.Feature.RUM>? = null
+
+    // TODO RUMM-0000 handle context
+    internal var context: DatadogContext? = null
 
     init {
         val isDebug = isAppDebuggable(context)
@@ -141,6 +145,15 @@ class DatadogCore(
         crashReportsFeature?.flushStoredData()
         webViewLogsFeature?.flushStoredData()
         webViewRumFeature?.flushStoredData()
+    }
+
+    /**
+     * Returns all registered features.
+     */
+    fun getAllFeatures(): List<FeatureScope> {
+        // TODO-2138
+        // should it be a part of SDKCore?
+        return emptyList()
     }
 
     // endregion
